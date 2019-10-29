@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PROSTE DZIAŁANIA</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="index.htm"><img src="baner.jpg" alt="Działania matematyczne"></a>
+      </header>
+      <nav>
+        Menu
+        <ul>
+          <li>- <a href="strona1.htm">Proste działania</a></li>
+          <li>- <a href="strona2.php">Potęgowanie</a></li>
+        </ul>
+      </nav>
+      <main>
+        <h1>Proste działania</h1>
+        <form class="dzialania">
+          <label for="num1">Podaj liczbę 1 </label>
+          :<input id="num1" type="number" name="num1"><br>
+          <label for="num2">Podaj liczbę 2 </label>
+          :<input id="num2" type="number" name="num2">
+          <br>
+          <div class="buttony">
+            <button id="sprawdzpola" onclick="dodawanie()" type="button" name="button">Dodawanie</button>
+            <button id="sprawdzpola" onclick="odejmowanie()" type="button" name="button">Odejmowanie</button>
+            <button id="sprawdzpola" onclick="mnozenie()" type="button" name="button">Mnożenie</button>
+            <button id="sprawdzpola" onclick="dzielenie()" type="button" name="button">Dzielenie</button>
+          </div>
+        </form>
+        <div id="wynik">
+
+        </div>
+      </main>
+      <footer></footer>
+  </div>
+  <script type="text/javascript">
+      document.getElementById("sprawdzpola").addEventListener("click", sprawdzamCie);
+      function sprawdzamCie() {
+        var num1 = Number(document.getElementById('num1').value);
+        var num2 = Number(document.getElementById('num2').value);
+          if (num1 && num2){
+          }else{
+            alert("Podaj dwie liczby PROSZĘ")
+          }
+          return [num1,num2];
+      }
+
+      function dodawanie() {
+        let cufru = sprawdzamCie()
+        var result = cufru[0] + cufru[1]
+        document.getElementById("wynik").innerHTML = result;
+      }
+      function odejmowanie() {
+        let cufru = sprawdzamCie()
+        var result = cufru[0] - cufru[1]
+        document.getElementById("wynik").innerHTML = result;
+      }
+      function dzielenie() {
+        let cufru = sprawdzamCie()
+        if (num2){
+                  var result = cufru[0] / cufru[1]
+        }else{
+          alert("Nie dziel przez PROSZĘ")
+        }
+
+        document.getElementById("wynik").innerHTML = result;
+      }
+      function mnozenie() {
+        let cufru = sprawdzamCie()
+        var result = cufru[0] * cufru[1]
+        document.getElementById("wynik").innerHTML = result;
+      }
+
+  </script>
+  </body>
+
+</html>
